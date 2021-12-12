@@ -7,15 +7,18 @@ RUN mkdir /app
 # в директорию /app.
 COPY requirements.txt /app
 
+# Сделать директорию /app рабочей директорией.
+WORKDIR /app
+
+# Создание и активация venv
+RUN python3 -m venv venv && . venv/bin/activate
+
 # Выполнить установку зависимостей внутри контейнера.
-RUN pip3 install -r /app/requirements.txt --no-cache-dir
+RUN pip3 install -r requirements.txt --no-cache-dir
 
 # Скопировать содержимое директории /api_yamdb c локального компьютера
 # в директорию /app.
-COPY ./ /app
-
-# Сделать директорию /app рабочей директорией. 
-WORKDIR /app
+COPY ./ ./
 
 # Выполнить запуск сервера разработки при старте контейнера.
 CMD ["gunicorn", "api_yamdb.wsgi:application", "--bind", "0:8000" ]
