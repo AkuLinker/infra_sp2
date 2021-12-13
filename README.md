@@ -26,23 +26,23 @@ docker-compose exec web python manage.py collectstatic
 ### Примеры запросов
 - Получение списка всех произведений
 ```
-http://localhost:8000/api/v1/titles/
+http://localhost/api/v1/titles/
 ```
 - Получение списка всех жанров
 ```
-http://localhost:8000/api/v1/genres/
+http://localhost/api/v1/genres/
 ```
 - Получение списка всех категорий
 ```
-http://localhost:8000/api/v1/categories/
+http://localhost/api/v1/categories/
 ```
 - Получение списка всех отзывов на произведение
 ```
-http://localhost:8000/api/v1/titles/{title_id}/reviews/
+http://localhost/api/v1/titles/{title_id}/reviews/
 ```
 - Вся Информация
 ```
-http://localhost:8000/redoc/
+http://localhost/redoc/
 ```
 ### Авторы
 - [Иван](https://github.com/AkuLinker/ "GitHub аккаунт")
