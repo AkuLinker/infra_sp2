@@ -10,9 +10,6 @@ COPY requirements.txt /app
 # Сделать директорию /app рабочей директорией.
 WORKDIR /app
 
-# Создание и активация venv
-RUN python3 -m venv venv && . venv/bin/activate
-
 # Выполнить установку зависимостей внутри контейнера.
 RUN pip3 install -r requirements.txt --no-cache-dir
 
